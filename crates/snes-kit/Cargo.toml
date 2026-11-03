@@ -1,0 +1,9 @@
+[package]
+name = "snes-kit"
+description = "SNES ROM maths, checksums, BPS patches, HAL compression and SMW level encoding"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]

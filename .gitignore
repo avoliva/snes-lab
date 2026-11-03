@@ -1,0 +1,29 @@
+# Build output
+/target
+.venv/
+__pycache__/
+*.pyc
+*.so
+*.pyd
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+out/
+
+# ROMs, patches and savestates never go in the repo
+*.sfc
+*.smc
+*.state
+*.bps
+*.mss
+
+# Local notes and AI-assistant files
+.DS_Store
+CLAUDE.md
+CLAUDE.local.md
+AGENTS.md
+.claude/
+.codex/
+.cursor/
+cursor-files/
+.obsidian/

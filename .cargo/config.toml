@@ -1,0 +1,7 @@
+# PyO3 extension modules leave Python's symbols to the interpreter (maturin adds this itself;
+# this lets plain `cargo build` / `cargo clippy` link the -py crate on macOS too).
+[target.aarch64-apple-darwin]
+rustflags = ["-C", "link-arg=-undefined", "-C", "link-arg=dynamic_lookup"]
+
+[target.x86_64-apple-darwin]
+rustflags = ["-C", "link-arg=-undefined", "-C", "link-arg=dynamic_lookup"]

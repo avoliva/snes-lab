@@ -1,0 +1,15 @@
+[build-system]
+requires = ["maturin>=1.16,<2"]
+build-backend = "maturin"
+
+[project]
+name = "snes-kit"
+version = "0.1.0"
+description = "SNES ROM maths, checksums, BPS patches, HAL compression and SMW level encoding (Rust)"
+requires-python = ">=3.11"
+license = "MIT"
+
+[tool.maturin]
+python-source = "python"
+module-name = "snes_kit._native"
+features = ["pyo3/extension-module"]

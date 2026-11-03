@@ -1,0 +1,41 @@
+[project]
+name = "snes-lab"
+version = "0.2.0"
+description = "MCP server for SNES ROM inspection, disassembly, emulation and modding, with a Rust core"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.14"
+dependencies = [
+    "mcp>=1.2",
+    "snes-kit",
+]
+
+[tool.uv.sources]
+snes-kit = { path = "crates/snes-kit-py" }
+
+[build-system]
+requires = ["uv_build>=0.13.0,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+    "ruff>=0.17.3",
+    "mypy>=1.11",
+]
+
+[project.scripts]
+snes-lab = "snes_lab.server:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM"]
+
+[tool.ruff.format]
+quote-style = "single"

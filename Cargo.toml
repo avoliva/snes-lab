@@ -1,0 +1,20 @@
+[workspace]
+resolver = "3"
+members = ["crates/snes-kit", "crates/snes-kit-py"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+license = "MIT"
+
+[profile.release]
+lto = true
+codegen-units = 1
+
+# The HAL tests compress 64 KiB inputs; unoptimized they take minutes.
+[profile.test]
+opt-level = 3
+
+[profile.dev.package."*"]
+opt-level = 2
